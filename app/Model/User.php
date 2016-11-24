@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-
-
 	protected $table = 'users';
 	protected $fillable = ['id', 'name', 'email', 'created_at'];
 
@@ -17,5 +15,4 @@ class User extends Model
 		dd($users);
 		return $users;
 	}
-
 }

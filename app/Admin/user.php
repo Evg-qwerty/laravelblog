@@ -14,9 +14,9 @@ AdminSection::registerModel(
 		return AdminDisplay::table()->setApply(function($query) {
 			$query->orderBy('created_at', 'desc');
 		})->setColumns([
-			AdminColumn::link('id')->setLabel('ID'),
-			AdminColumn::link('name')->setLabel('Имя'),
-			AdminColumn::link('email')->setLabel('Email'),
+			AdminColumn::text('id')->setLabel('ID'),
+			AdminColumn::text('name')->setLabel('Имя'),
+			AdminColumn::text('email')->setLabel('Email'),
 			AdminColumn::datetime('created_at')->setLabel('Дата создания')->setFormat('d.m.Y')->setWidth('150px')
 		])->paginate(5);
 	});
@@ -33,5 +33,5 @@ AdminSection::registerModel(
 		return $form;
 	});
 })
-	->addMenuPage(User::class, 1)
-	->setIcon('fa fa-bank');
+	->addMenuPage(User::class, 99)
+	->setIcon('fa fa-user');

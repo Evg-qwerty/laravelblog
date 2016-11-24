@@ -14,8 +14,8 @@ AdminSection::registerModel(
 		return AdminDisplay::table()->setApply(function($query) {
 			$query->orderBy('created', 'desc');
 		})->setColumns([
-			AdminColumn::link('title')->setLabel('Title'),
-			AdminColumn::link('description')->setLabel('Description'),
+			AdminColumn::text('title')->setLabel('Title'),
+			AdminColumn::text('description')->setLabel('Description'),
 			AdminColumn::datetime('created')->setLabel('Date')->setFormat('d.m.Y')->setWidth('150px'),
 			AdminColumnEditable::checkbox('active')->setLabel('Published'),
 		])->paginate(5);
@@ -38,4 +38,4 @@ AdminSection::registerModel(
 	});
 })
 	->addMenuPage(Content::class, 0)
-	->setIcon('fa fa-bank');
+	->setIcon('fa fa-book');
