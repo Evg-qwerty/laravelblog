@@ -6,13 +6,13 @@
     </li>
     <li class="dropdown user user-menu" style="margin-right: 20px;">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-            <img src="images/blank.png" class="user-image" />
+            <img src="/images/blank.png" class="user-image" />
             <span class="hidden-xs">{{ $user->name }}</span>
         </a>
         <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
-                <img src="images/blank.png" class="img-circle" />
+                <img src="/images/blank.png" class="img-circle" />
 
                 <p>
                     {{ $user->name }}
