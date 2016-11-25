@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // source
     $('#title').keyup(function(){
         translit();
         return false;
@@ -37,7 +38,7 @@ function translit(){
     }
 
     result = TrimStr(result);
-
+    //target
     $('#url').val(result);
 
 }
