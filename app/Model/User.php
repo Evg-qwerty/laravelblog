@@ -11,8 +11,8 @@ class User extends Model
 
 	public function getUser()
 	{
-		$users = User::latest('created_at')->all()->get();
-		dd($users);
-		return $users;
+		//$users = User::latest('created_at')->all()->get();
+		//dd($users);
+		//return $users;
 	}
 }

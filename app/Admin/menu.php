@@ -4,6 +4,7 @@ use App\Model\Menu;
 use SleepingOwl\Admin\Model\ModelConfiguration;
 
 AdminSection::registerModel(Menu::class, function (ModelConfiguration $model) {
+
 	$model->setTitle('Меню');
 
 	// Display

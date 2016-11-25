@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Menu extends Model
 {
@@ -11,8 +12,8 @@ class Menu extends Model
 
 	public function getMenu()
 	{
-		$menus = User::latest('created_at')->all()->get();
-		dd($menus);
+		$menus = DB::table('menus')->orderBy('order', 'asc')->get();
+		//dd($menus);
 		return $menus;
 	}
 }
