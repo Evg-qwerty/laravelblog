@@ -1,3 +1,6 @@
+/*
+Auto change title->url(seo).
+*/
 $(document).ready(function () {
     // source
     $('#title').keyup(function(){
