@@ -15,6 +15,7 @@ AdminSection::registerModel(Menu::class, function (ModelConfiguration $model) {
 	$model->onCreateAndEdit(function() {
 		return AdminForm::form()->setItems([
 			AdminFormElement::text('title', 'Title')->required(),
+			AdminFormElement::text('url', 'URL')->required(),
 		]);
 	});
 })->addMenuPage(Menu::class, 2)->setIcon('fa fa-bars');

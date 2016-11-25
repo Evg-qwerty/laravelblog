@@ -25,15 +25,3 @@ class blogTableSeeder extends Seeder
 	    }
     }
 }
-
-/*Schema::create('blogmodels', function (Blueprint $table) {
-	$table->increments('id');
-	$table->string('title')->nullable(); // Заголовок
-	$table->string('url')->unique(); // урл для сылки
-	$table->string('img')->nullable(); // урл картинки
-	$table->text('description')->nullable(); // короткая версия
-	$table->text('content')->nullable(); // полная версия
-	$table->boolean('active')->default(false); // статус
-	$table->timestamp('created')->nullable(); // дата создания
-	$table->timestamps();
-});*/

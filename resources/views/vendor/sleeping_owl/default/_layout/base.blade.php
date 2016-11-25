@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	{!!
 		Meta::setTitle(AdminTemplate::makeTitle($title))
@@ -23,5 +23,6 @@
 
 	{!! Meta::renderScripts(true) !!}
 	@stack('footer-scripts')
+	<script src="/js/js.js"></script>
 </body>
 </html>
