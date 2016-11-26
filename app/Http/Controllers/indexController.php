@@ -13,13 +13,13 @@ class indexController extends Controller
 	public function index(Content $postsModel, Menu $menuModel, Request $request)
 	{
 		$posts = $postsModel->getPublishedPost();
-		$menus = $this->getParents( $menuModel->getMenu() );
+		$menus = $this->sortMenu( $menuModel->getMenu() );
 		$url = $request->path();
-
+		//dd($menus);
 		return view("index", ['posts' => $posts, 'menu' => $menus, 'url' => $url]);
 	}
 
-	public function getParents($menus)
+	public function sortMenu($menus)
 	{
 		$menusSort = [];
 
@@ -38,8 +38,7 @@ class indexController extends Controller
 				}
 			}
 		}
-		//dd($menusSort);
-		return $menus;
+		return $menusSort;
 	}
 
 	public function content(Content $postsModel, $url)

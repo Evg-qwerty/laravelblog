@@ -17,6 +17,8 @@ AdminSection::registerModel(Menu::class, function (ModelConfiguration $model) {
 		return AdminForm::form()->setItems([
 			AdminFormElement::text('title', 'Title')->required(),
 			AdminFormElement::text('url', 'URL')->required(),
+			AdminFormElement::checkbox('last', 'Последний в меню'),
+			AdminFormElement::checkbox('no_child', 'Нет потомков'),
 		]);
 	});
 })->addMenuPage(Menu::class, 2)->setIcon('fa fa-bars');

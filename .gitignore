@@ -1,6 +1,10 @@
 /node_modules
 /public/storage
 /storage/*.key
+composer.phar
+/bootstrap/compiled.php
+.DS_Store
+/public/packages
 /vendor
 /.idea
 Homestead.json
