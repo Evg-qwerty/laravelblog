@@ -23,7 +23,9 @@
                                 @if($menuFor->level == 2 && $menuFor->order == 0)
                                     <ul class="dropdown-menu" aria-labelledby="drop{{$id-1}}">
                                 @endif
-                                {!! $menuFor->level == 1 ? '</li>' : null!!}<li {{$menuFor->level == 1 ? 'class=dropdown' : null}}><a href="#" {!! $menuFor->level == 1 ? "class='dropdown-toggle' id='drop$id' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'" : null!!}>{{$menuFor->title }}{!! $menuFor->level == 1 && $menuFor->no_child == 0 ? "<span class='caret'></span>":null!!}</a>
+                                {!! $menuFor->level == 1 ? '</li>' : null!!}
+                                        <li {{$menuFor->level == 1 ? 'class=dropdown' : null}}>
+                                            <a href="/{{ $menuFor->url }}" {!! $menuFor->level == 1 ? "class='dropdown-toggle' id='drop$id' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'" : null!!}>{{$menuFor->title }}{!! $menuFor->level == 1 && $menuFor->no_child == 0 ? "<span class='caret'></span>":null!!}</a>
                                 @if($menuFor->level == 2)
                                     </li>
                                 @endif

@@ -3,7 +3,8 @@ Auto change title->url(seo).
 */
 $(document).ready(function () {
     // source
-    $('#title').keyup(function(){
+    $('#url').after("<div class='trans btn btn-primary btn-xs'>Транслитерация</div>");
+    $('.trans').click(function(){
         translit();
         return false;
     });
