@@ -10,39 +10,30 @@ class Content extends Model
 
 
 	protected $table = 'blogmodels';
-	protected $fillable = [
-		'id',
-		'title',
-		'url',
-		'img',
-		'description',
-		'content',
-		'active',
-		'created',
-		'created_at',
-		'updated_at',
-	];
+	protected $fillable = ['id','title','url','img','description','content','autor'.'catalog','active','created','created_at','updated_at'];
 
-	public function getPublishedPost()
+	public function getPost($param)
 	{
-		$posts = Content::latest('created')->published()->get();
-		//dd($posts);
+		$param = (object)$param;
+
+		$posts = Content::latest($param->sort);
+
+		if($param->public)
+			$posts->published();
+
+		if($param->filter)
+			$posts->where($param->filterColumn, '=', $param->filterValue);
+
+		if($param->limit)
+			$posts = $posts->limit($param->limit);
+
+		$posts = $posts->get();
 
 		return $posts;
 	}
 
 	public function scopePublished ($query)
 	{
-		$query->where('created', '<=', Carbon::now() )->where('active', '=', 1)->Limit(6);
+		$query->where('created', '<=', Carbon::now() )->where('active', '=', 1);
 	}
-
-	public function getPost($url)
-	{
-		$post = Content::latest('created')->where('url', '=', $url)->get();
-		//dd($post);
-		$post = $post->toArray();
-		$post = (object)$post[0];
-		return $post;
-	}
-
 }

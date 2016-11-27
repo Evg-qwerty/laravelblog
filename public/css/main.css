@@ -1,6 +1,12 @@
+body {
+    margin-top: 50px;
+}
 .auth-form {
     margin-top: 5%;
 }
 .marketing {
     margin-bottom: 5%;
+}
+.form-buttons {
+    margin-bottom: 120px;
 }

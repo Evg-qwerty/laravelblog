@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Model\Menu;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Menu $menuModel)
     {
 	    // Регистрация виджетов в реестре
 	    /** @var WidgetsRegistryInterface $widgetsRegistry */
@@ -25,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
 	    foreach ($this->widgets as $widget) {
 		    $widgetsRegistry->registerWidget($widget);
 	    }
+
+	    view()->share( 'menu',$menuModel->getMenu());
     }
 
     /**
