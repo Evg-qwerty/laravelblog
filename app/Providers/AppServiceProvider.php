@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Model\Menu;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Menu $menuModel)
+    public function boot(Request $request)
     {
 	    // Регистрация виджетов в реестре
 	    /** @var WidgetsRegistryInterface $widgetsRegistry */
@@ -27,7 +27,8 @@ class AppServiceProvider extends ServiceProvider
 		    $widgetsRegistry->registerWidget($widget);
 	    }
 
-	    view()->share( 'menu',$menuModel->getMenu());
+	    // share data for all view
+	    view()->share( 'url',$request->path());
     }
 
     /**

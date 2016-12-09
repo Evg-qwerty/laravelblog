@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Model\Content;
-use Illuminate\Http\Request;
 
 class indexController extends Controller
 {
 
-	public function index(Content $postsModel, Request $request)
+	public function index(Content $postsModel)
 	{
 		$param = [
 			"limit" => "6",
@@ -21,10 +20,7 @@ class indexController extends Controller
 
 		$posts = $postsModel->getPost($param);
 
-		$url = $request->path();
-
-		return view("index", ['posts' => $posts, 'url' => $url]);
+		return view("index", ['posts' => $posts]);
 	}
-
 
 }

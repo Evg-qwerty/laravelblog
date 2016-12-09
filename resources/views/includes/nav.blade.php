@@ -9,10 +9,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand">Logo</a>
+                <a href="/" class="navbar-brand">Logo</a>
             </div>
             <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
-                <ul class="nav navbar-nav navbar-right"><?php $id=1 ?>@foreach($menu as $menuFor){!! $menuFor->level == 2 && $menuFor->order == 0 ? '<ul class="dropdown-menu" aria-labelledby="drop{{$id-1}}">' : null!!}<li{{$menuFor->level == 1 && $menuFor->no_child == 0 ? ' class=dropdown' : null}}><a href="{{$menuFor->level != 1 && $menuFor->no_child == 0 ? '/par/' : null}}{{ $menuFor->url }}" {!! $menuFor->level == 1 && $menuFor->no_child == 0 ? "class='dropdown-toggle' id='drop$id' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'" : null!!}>{{$menuFor->title }}{!! $menuFor->level == 1 && $menuFor->no_child == 0 ? "<span class='caret'></span>":null!!}</a>{!! $menuFor->last == 1 ? '</ul>' : null!!}<?php if($menuFor->level == 1) {$id=$id+1;}?>@endforeach</ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PHP<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/category/php-articles">Заметки (php)</a></li>
+                            <li><a href="/category/php-code">Код (php)</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JS<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/category/js-articles">Заметки (js)</a></li>
+                            <li><a href="/category/js-code">Код (js)</a></li>
+                        </ul>
+                    </li>
+                    <li class="li {!! $url == 'about' ? 'active' : null !!}"><a href="/about">О сайте</a></li>
+                </ul>
             </div>
         </div>
     </nav>

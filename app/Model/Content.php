@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Model;
-
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
+/**
+ * Class Content
+ * @package App\Model
+ */
 class Content extends Model
 {
 
@@ -31,6 +34,25 @@ class Content extends Model
 
 		return $posts;
 	}
+/*	public function getPost($param)
+	{
+		$param = (object)$param;
+
+		$posts = Content::latest($param->sort);
+
+		if($param->public)
+			$posts->published();
+
+		if($param->filter)
+			$posts->where($param->filterColumn, '=', $param->filterValue);
+
+		if($param->limit)
+			$posts = $posts->limit($param->limit);
+
+		$posts = $posts->get();
+
+		return $posts;
+	}*/
 
 	public function scopePublished ($query)
 	{

@@ -120,6 +120,7 @@ return [
          */
         'ckeditor' => [
             'height' => 200,
+	        "allowedContent" => true
         ],
 
         /*

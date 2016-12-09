@@ -10,3 +10,7 @@ body {
 .form-buttons {
     margin-bottom: 120px;
 }
+.code {
+    width: 80%;
+    height: 20em;
+}

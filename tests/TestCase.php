@@ -8,6 +8,7 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
      * @var string
      */
     protected $baseUrl = 'http://localhost';
+    //protected $baseUrl = 'http://s3.localhost/';
 
     /**
      * Creates the application.
